@@ -1,24 +1,24 @@
 <?php 
 session_start();
-$conn = mysqli_connect('localhost','root','','noveltees');
+$conn = mysqli_connect('localhost','root','','parts_platoon');
 if(!$conn){
   echo mysqli_connect_error();
 }
 
 
 if(isset($_POST['submit'])){
-    $name =$_POST['name'];
+    echo $name =$_POST['name'];
     
-    $price1 =$_POST['price1'];
-    $price2 =$_POST['price2'];
-    $type =$_POST['type'];
+    echo $price =$_POST['price'];
     
-   $image =  $_FILES['file']['name'];
-   $status =  $_POST['Stock_status'];
+    echo $type =$_POST['type'];
+    echo $brand =$_POST['brand'];
+   echo $imege =  $_FILES['file']['name'];
+   echo $status =  $_POST['Stock_status'];
    $tmpname =  $_FILES['file']['tmp_name'];
-   $uploc = '../imeges/'.$image;
+   $uploc = '../imeges/'.$imege;
    $uploadOk=1;
-   $imageFileType= strtolower(pathinfo($image,PATHINFO_EXTENSION));
+   $imageFileType= strtolower(pathinfo($imege,PATHINFO_EXTENSION));
    if(file_exists($uploc)){
        $uploadOk=0;
        $_SESSION['status']="File allready  exist";
@@ -31,7 +31,7 @@ if(isset($_POST['submit'])){
        header("Location: ../product_read.php");
    }
    if($uploadOk==1){
-    $sql= "INSERT INTO products(name,price1,price2,type,image,status) VALUES('$name','$price1','$price2','$type','$image','$status')";
+    $sql= "INSERT INTO `products`( `name`, `type`, `brands`, `price`, `imege`, `status`) VALUES ('$name','$type','$brand','$price','$imege','$status')";
     if(mysqli_query($conn,$sql) == TRUE){
       move_uploaded_file($tmpname,$uploc);
       $_SESSION['status']="Product Added Successfully";
@@ -49,18 +49,20 @@ if(isset($_POST['submit'])){
   
 
 if(isset($_POST['update'])){
-    $id =$_POST['id'];
-    $name =$_POST['name'];
+  echo $name =$_POST['name'];
     
-    $price1 =$_POST['price1'];
-    $price2 =$_POST['price2'];
-    $type =$_POST['type'];
+  echo $price =$_POST['price'];
+  
+  echo $type =$_POST['type'];
+  echo $brand =$_POST['brand'];
+
+ echo $status =  $_POST['Stock_status'];
     
-   $image =  $_FILES['file']['name'];
-   $status =  $_POST['Stock_status'];
-   $tmpname =  $_FILES['file']['tmp_name'];
-   $uploc = 'imeges/'.$image;
-  $sql= "UPDATE products set name='$name',price1='$price1',price2='$price2',type='$type',image='$image',status='$status' where id='$id'";
+  //  $image =  $_FILES['file']['name'];
+  //  $status =  $_POST['Stock_status'];
+  //  $tmpname =  $_FILES['file']['tmp_name'];
+  //  $uploc = 'imeges/'.$image;
+  $sql= "UPDATE products set name='$name',price='$price',brands='$brand',type='$type',status='$status' where id='$id'";
   if(mysqli_query($conn,$sql) == TRUE){
     move_uploaded_file($tmpname,$uploc);
     $_SESSION['status']="Product Updated Successfully";
@@ -75,9 +77,18 @@ if(isset($_POST['update'])){
 
 if(isset($_POST['delete'])){
   $id =$_POST['d_id'];
+  $sql ="SELECT * from products where id= $id";
+$data = mysqli_query($conn, $sql);
+$check_result= mysqli_num_rows($data)> 0;
+if($check_result){
+  while( $rows = mysqli_fetch_array( $data ) ) 
+  {
+     $imege=$rows ['imege'];
+
+     
   $sql="DELETE from products where id=$id";
   if(mysqli_query($conn,$sql) == TRUE){
-    unlink("imeges/".$image);
+    unlink("../imeges/".$imege);
     $_SESSION['status']="Product Deleted Successfully";
     header("Location: ../product_read.php");
 
@@ -88,5 +99,11 @@ if(isset($_POST['delete'])){
   }
 
 }
+}
+}
+else{
+   die("Can not execute query");
+}
+
 
 ?>
