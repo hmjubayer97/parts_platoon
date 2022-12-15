@@ -26,8 +26,8 @@
 </a>
   </div> 
 <div class="col-md-4 mt-5">
-<form class="d-flex" role="search">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+<form action="product.php" method="GET" class="d-flex" role="search">
+      <input name="brand" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-dark" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
     </form>
 </div>
@@ -44,7 +44,7 @@
 </div>
 <nav class="navbar bg-dark  navbar-expand-lg bg-light ">
   <div class="container-fluid">
-    <a class="navbar-brand"><img src="imeges/logo.png" style="width:70px;" alt=""></a>
+    
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -66,7 +66,7 @@ if($check_result){
   while( $rows = mysqli_fetch_array( $data ) ) 
   {
       ?>
-            <li><a class="dropdown-item fs-5" href="#" style="text-align:center; "><?php echo $rows ['name']?></a></li>
+            <li><a class="dropdown-item fs-5" href="product.php?brand=<?php echo $rows ['name']?>" style="text-align:center; "><?php echo $rows ['name']?></a></li>
            
             <?php
     }
@@ -78,17 +78,17 @@ else{
           </ul>
         </li>
         <li class="nav-item dropdown ">
-        <a class="nav-link active fs-5 text-white  "  role="button" data-bs-toggle="dropdown" aria-expanded="false"href="#" style="width:200px;text-align:center;">   Accessories
+        <a class="nav-link active fs-5 text-white  "  role="button" data-bs-toggle="dropdown" aria-expanded="false" style="width:200px;text-align:center;">   Accessories
         
         </a>
 
        
-          <ul class="dropdown-menu" style="width:200px;">
-            <li><a class="dropdown-item fs-4fs-5" href="#" style="text-align:center; ">Gloves</a></li>
-            <li><a class="dropdown-item fs-5" href="#" style="text-align:center; ">Covers</a></li>
+          <ul class="dropdown-menu" >
+            <li><a class="dropdown-item fs-4 " href="product.php?brand=Gloves"  style="text-align:center; ">Gloves</a></li>
+            <li><a class="dropdown-item fs-4 " href="product.php?brand=Covers"  style="text-align:center; ">Covers</a></li>
           
-            <li><a class="dropdown-item fs-5" href="#" style="text-align:center; ">Polish</a></li>
-            <li><a class="dropdown-item fs-5" href="#" style="text-align:center; ">Generel Tools</a></li>
+            <li><a class="dropdown-item fs-5" href="product.php?brand=Polish"  style="text-align:center; ">Polish</a></li>
+            <li><a class="dropdown-item fs-5" href="product.php?brand=General Tools"  style="text-align:center; ">Generel Tools</a></li>
           
           </ul>
         </li>
@@ -99,17 +99,17 @@ else{
 
        
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item fs-5" href="#" style="text-align:center; ">Engine Oil</a></li>
+            <li><a class="dropdown-item fs-5" href="product.php?brand=Engine Oil" style="text-align:center; ">Engine Oil</a></li>
             <li><a class="dropdown-item fs-5" href="#" style="text-align:center; ">Gear Box Lube</a></li>
           
-            <li><a class="dropdown-item fs-5" href="#" style="text-align:center; ">Booster</a></li>
+            <li><a class="dropdown-item fs-5" href="product.php?brand=Booster" style="text-align:center; ">Booster</a></li>
             
           
           </ul>
         </li>
 
         <li class="nav-item "  role="button"  style="width:200px;text-align:center;">
-          <a class="nav-link fs-5 text-white">All Parts</a>
+          <a class="nav-link fs-5 text-white" href="product.php?brand=Parts" >All Parts</a>
         </li>
         <li class="nav-item "   style="width:200px;text-align:center;">
           <a class="nav-link fs-5 text-white"  role="button" href="#">Contact Us</a>

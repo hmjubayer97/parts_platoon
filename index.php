@@ -48,7 +48,7 @@ if($check_result){
   {
       ?>
 
-<div class="card" style="width:18rem;background-color:black; padding:10px; color:white; ">
+<div class="card" style="width:18rem;background-color:black; padding:0px;  ">
 
   <img src="Admin/imeges/<?php echo $rows ['imege']?>" class="card-img-top" style="height:600px;" alt="...">
 
@@ -65,19 +65,20 @@ else{
 
 <!-- Mid Box -->
  <br><br><br>
-<div class="container" style="padding-left:50px;" >
+<div class="container"  >
 
-<div class="row" >
+<div class="row"  >
 <h4 style=" height:50px;">Find your best deals</h4>
-  <div class="col-md-4 col-12 ">
-  <div class="card zoom" style="width: 20rem;  background-image:linear-gradient(to right,#93A5CF ,  #FCB69F); height:150px;">
+  <div class="col-md-4 col-12 " style="padding-top:10px;">
+  <div class="card zoom" style="width: 22rem;  background-image:linear-gradient(to right,#93A5CF ,  #FCB69F); height:150px;padding-top:10px;">
   <div class="card-body">
     <!-- <h5 class="card-title">Card title</h5> -->
     <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
    
     <h1><i  class="fa-sharp fa-solid fa-bottle-droplet"></i></h1>
-    <h3>Get your Engine oil </h3>
-    <a href="#" class="card-link text-dark">More Info</a>
+    <h4>Get your Engine oil </h4>
+    <a href="product.php?brand=Oil" class="card-link text-dark">More Info</a>
+    
     
   </div>
 </div>
@@ -89,27 +90,27 @@ else{
 
 
 
-  <div class="col-md-4 col-12">
-  <div class="card zoom" style="width: 20rem;  background-image:linear-gradient(to right,#02AABD , #00CDAC)">
+  <div class="col-md-4 col-12" style="padding-top:10px;">
+  <div class="card zoom" style="width: 22rem;  background-image:linear-gradient(to right,#02AABD , #00CDAC);padding-top:10px;">
   <div class="card-body">
     <!-- <h5 class="card-title">Card title</h5> -->
     <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
     <h1><i class="fa-solid fa-bucket"></i></h1>
     <h4>Get your Authentic Parts </h4>
-    <a href="#" class="card-link text-dark">More Info</a>
+    <a href="product.php?brand=Parts"  class="card-link text-dark">More Info</a>
     
   </div>
 </div>
   </div>
  
-  <div class="col-md-4 col-12">
-  <div class="card zoom" style="width: 20rem;  background-image:linear-gradient(to right,#93A5CF,  #E4EfE9)">
+  <div class="col-md-4 col-12" style="padding-top:10px;">
+  <div class="card zoom" style="width: 22rem;  background-image:linear-gradient(to right,#93A5CF,  #E4EfE9);">
   <div class="card-body">
     <!-- <h5 class="card-title">Card title</h5> -->
     <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
     <h1><i class="fa-solid fa-crown"></i></h1>
-    <h4>Get your Biking lifestyle </h4>
-    <a href="#" class="card-link text-dark">More Info</a>
+    <h4>Get your Accessories </h4>
+    <a href="product.php?brand=Accessories" class="card-link text-dark">More Info</a>
   </div>
 </div>
   </div>
@@ -119,7 +120,7 @@ else{
 <br><br><br>
    <!-- Part4 -->
    <h1 class="container  "  style="">Featured Items</h1>  
-<!-- <h2 class="container "  style="color:white;font-size:35px;">our most popular and softest beloved shirts.</h2>  -->
+
    <div class="container slider2 " style="padding:10px;">
    <?php 
 
@@ -136,8 +137,8 @@ if($check_result){
 
 <img src="Admin/imeges/<?php echo $rows ['imege']?>" class="card-img-top" style="height:300px;" alt="...">
 <div class="card-body">
-  <span style="  color:black;"><?php echo $rows ['name']?></span>
-  <span style=" height:80px; color:black;">$<?php echo $rows ['price']?></span> 
+  <span style="  color:black;"><?php echo $rows ['name']?></span><br>
+  <span style=" height:80px; color:black;">Tk.<?php echo $rows ['price']?></span> 
 </div>
 
 </div>
