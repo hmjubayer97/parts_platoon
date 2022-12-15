@@ -14,7 +14,22 @@ if(!$conn){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      
+   .zoom {
     
+    
+    transition: transform .1s;
+    
+    
+  }
+  
+  .zoom:hover {
+    -ms-transform: scale(1.2); /* IE 9 */
+    -webkit-transform: scale(1.2); /* Safari 3-8 */
+    transform: scale(1.2); 
+  }
+    </style>
     <title>Home - Parts Platoon</title>
 </head>
 <body>
@@ -45,7 +60,137 @@ if($check_result){
 else{
    die("Can not execute query");
 }
+?>	          
+   </div>
+
+<!-- Mid Box -->
+ <br><br><br>
+<div class="container" style="padding-left:50px;" >
+
+<div class="row" >
+<h4 style=" height:50px;">Find your best deals</h4>
+  <div class="col-md-4 col-12 ">
+  <div class="card zoom" style="width: 20rem;  background-image:linear-gradient(to right,#93A5CF ,  #FCB69F); height:150px;">
+  <div class="card-body">
+    <!-- <h5 class="card-title">Card title</h5> -->
+    <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+   
+    <h1><i  class="fa-sharp fa-solid fa-bottle-droplet"></i></h1>
+    <h3>Get your Engine oil </h3>
+    <a href="#" class="card-link text-dark">More Info</a>
+    
+  </div>
+</div>
+  </div>
+ 
+
+
+
+
+
+
+  <div class="col-md-4 col-12">
+  <div class="card zoom" style="width: 20rem;  background-image:linear-gradient(to right,#02AABD , #00CDAC)">
+  <div class="card-body">
+    <!-- <h5 class="card-title">Card title</h5> -->
+    <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+    <h1><i class="fa-solid fa-bucket"></i></h1>
+    <h4>Get your Authentic Parts </h4>
+    <a href="#" class="card-link text-dark">More Info</a>
+    
+  </div>
+</div>
+  </div>
+ 
+  <div class="col-md-4 col-12">
+  <div class="card zoom" style="width: 20rem;  background-image:linear-gradient(to right,#93A5CF,  #E4EfE9)">
+  <div class="card-body">
+    <!-- <h5 class="card-title">Card title</h5> -->
+    <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+    <h1><i class="fa-solid fa-crown"></i></h1>
+    <h4>Get your Biking lifestyle </h4>
+    <a href="#" class="card-link text-dark">More Info</a>
+  </div>
+</div>
+  </div>
+</div>
+</div>
+
+<br><br><br>
+   <!-- Part4 -->
+   <h1 class="container  "  style="">Featured Items</h1>  
+<!-- <h2 class="container "  style="color:white;font-size:35px;">our most popular and softest beloved shirts.</h2>  -->
+   <div class="container slider2 " style="padding:10px;">
+   <?php 
+
+$sql ="SELECT imege,price,name from products";
+$data = mysqli_query($conn, $sql);
+$check_result= mysqli_num_rows($data)> 0;
+if($check_result){
+  while( $rows = mysqli_fetch_array( $data ) ) 
+  {
+      ?>
+
+<div>
+<div class="card" style="width:200px; height:300px; padding:10px; color:white;">
+
+<img src="Admin/imeges/<?php echo $rows ['imege']?>" class="card-img-top" style="height:300px;" alt="...">
+<div class="card-body">
+  <span style="  color:black;"><?php echo $rows ['name']?></span>
+  <span style=" height:80px; color:black;">$<?php echo $rows ['price']?></span> 
+</div>
+
+</div>
+
+</div>
+<?php
+    }
+}
+else{
+   die("Can not execute query");
+}
 ?>	
+   </div>
+
+
+
+
+<!-- Ambassadors -->
+   <br><br>
+                <Center> <h2 style=" height:80px;">Our Beloved Ambassadors</h2></Center>
+
+                <div class="slider3 container "style="padding:40px;">
+                <?php 
+
+              $sql ="SELECT name,imege from ambas";
+              $data = mysqli_query($conn, $sql);
+              $check_result= mysqli_num_rows($data)> 0;
+              if($check_result){
+                while( $rows = mysqli_fetch_array( $data ) ) 
+                {
+                    ?>
+                    
+
+              <div >
+              <div class="card " style="width:18rem; padding:10px; color:white; box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;">
+
+              <img src="Admin/imeges/<?php echo $rows ['imege']?>" class="card-img-top" style="height:300px;" alt="...">
+              <div class="card-body">
+              <Center> <h2 style=" height:80px; color:black;"><?php echo $rows ['name']?></h2></Center>
+
+                
+              </div>
+
+              </div>
+              </div>
+
+              <?php
+                  }
+              }
+              else{
+                die("Can not execute query");
+              }
+              ?>	
    </div>
 </body>
 </html>
