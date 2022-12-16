@@ -35,6 +35,7 @@ if(!$conn){
 <body>
 
     <?php include "includes/navbar.php" ?>
+    
 
         <!-- Slider -->
         <div class="slider1">

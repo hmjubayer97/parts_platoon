@@ -112,7 +112,7 @@ else{
           <a class="nav-link fs-5 text-white" href="product.php?brand=Parts" >All Parts</a>
         </li>
         <li class="nav-item "   style="width:200px;text-align:center;">
-          <a class="nav-link fs-5 text-white"  role="button" href="#">Contact Us</a>
+          <a class="nav-link fs-5 text-white"  role="button" href="contact_us.php">Contact Us</a>
         
         </li>
         <!-- <li class="nav-item active fs-5">
