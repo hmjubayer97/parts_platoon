@@ -1,8 +1,8 @@
 <!-- favicon-->
-<link rel="apple-touch-icon" sizes="180x180" href="meges/favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="imeges/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="imeges/favicon/favicon-16x16.png">
-<link rel="manifest" href="imeges/favicon/site.webmanifest">
+<link rel="apple-touch-icon" sizes="180x180" href="../imeges/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../imeges/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../imeges/favicon/favicon-16x16.png">
+<link rel="manifest" href="../imeges/favicon/site.webmanifest">
 
 <!-- css file-->
 <link rel="stylesheet" href="asset/bootstrap-5.2.3-dist/css/bootstrap.min.css">

@@ -62,7 +62,7 @@ $conn = mysqli_connect('localhost','root','','parts_platoon');
 
 <div class="form-group">
     <label for="exampleFormControlInput1">Price Start</label>
-    <input name="price1" type="text"  class="form-control" id="exampleFormControlInput1" value="<?php echo $rows ['price']?>" placeholder="">
+    <input name="price" type="text"  class="form-control" id="exampleFormControlInput1" value="<?php echo $rows ['price']?>" placeholder="">
 </div>
 
 

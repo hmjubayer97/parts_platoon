@@ -1,4 +1,5 @@
 <?php 
+session_start();
 $conn = mysqli_connect('localhost','root','','parts_platoon');
 if(!$conn){
   echo mysqli_connect_error();
@@ -37,6 +38,15 @@ if(!$conn){
     <?php include "includes/navbar.php" ?>
     
 
+    <?php
+        if(isset($_SESSION['status'])){
+                        ?>
+                        <div style="font-weight:bold;color:black;"class="alert alert-success" role="alert"> <?php echo'<h4>'.$_SESSION['status']. '</h4>'?></div>
+                        <?php 
+                        unset($_SESSION['status']);
+                      }
+                    ?>
+
         <!-- Slider -->
         <div class="slider1">
    <?php 
@@ -51,7 +61,7 @@ if($check_result){
 
 <div class="card" style="width:18rem;background-color:black; padding:0px;  ">
 
-  <img src="Admin/imeges/<?php echo $rows ['imege']?>" class="card-img-top" style="height:600px;" alt="...">
+<img src="Admin/imeges/<?php echo $rows ['imege']?>" class="card-img-top" style="height:600px;" alt="...">
 
 </div>
 
@@ -120,12 +130,12 @@ else{
 
 <br><br><br>
    <!-- Part4 -->
-   <h1 class="container  "  style="">Featured Items</h1>  
+   <h3 class="container" >Featured Items</h3>  
 
-   <div class="container slider2 " style="padding:10px;">
+   <div class="container slider2 " style="padding:40px;">
    <?php 
 
-$sql ="SELECT imege,price,name from products";
+$sql ="SELECT id, imege,price,name from products";
 $data = mysqli_query($conn, $sql);
 $check_result= mysqli_num_rows($data)> 0;
 if($check_result){
@@ -134,9 +144,9 @@ if($check_result){
       ?>
 
 <div>
-<div class="card" style="width:200px; height:300px; padding:10px; color:white;">
+<div class="card" style="width:200px; height:400px; padding:10px; color:white;">
 
-<img src="Admin/imeges/<?php echo $rows ['imege']?>" class="card-img-top" style="height:300px;" alt="...">
+<a href="purchase.php?id=<?php echo $rows ['id']?>"><img src="Admin/imeges/<?php echo $rows ['imege']?>" class="card-img-top" style="height:300px;" alt="..."></a>
 <div class="card-body">
   <span style="  color:black;"><?php echo $rows ['name']?></span><br>
   <span style=" height:80px; color:black;">Tk.<?php echo $rows ['price']?></span> 
@@ -153,6 +163,64 @@ else{
 }
 ?>	
    </div>
+
+<br><br><br>
+<!-- Policies -->
+
+<div style="padding:80px; background-color:#e8e9e9">
+  <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-3" style="padding:10px;">
+          <div class="row">
+              <div class="col-12 col-md-2">
+                <h2><i class="fa-solid fa-lock"></i></h2>
+              </div>
+              <div class="col-12 col-md-10">
+                <h5>Secure Payment</h5>
+                <span>Multiple card accepntence</span>
+              </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-3" style="padding:10px;">
+          <div class="row">
+              <div class="col-12 col-md-2">
+                <h2><i class="fa-solid fa-arrows-spin"></i></h2>
+              </div>
+              <div class="col-12 col-md-10">
+                <h5>Easy Return</h5>
+                <span>For 10 days</span>
+              </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-3" style="padding:10px;">
+          <div class="row">
+              <div class="col-12 col-md-2">
+                <h2><i class="fa-solid fa-medal"></i></h2>
+              </div>
+              <div class="col-12 col-md-10">
+                <h5>Best prices</h5>
+                <span>Over 2000 Tk.</span>
+              </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-3" style="padding:10px;">
+          <div class="row">
+              <div class="col-12 col-md-3" >
+                <h2><i class="fa-solid fa-truck-fast"></i></h2>
+              </div>
+              <div class="col-12 col-md-9" style="padding:0px;">
+                <h5>Free Shipping</h5>
+                <span>Over 2000 Tk.</span>
+              </div>
+          </div>
+        </div>
+    
+      
+      </div>
+  </div>
+</div>
+
+
 
 
 

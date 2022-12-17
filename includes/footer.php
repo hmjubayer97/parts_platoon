@@ -82,8 +82,8 @@ $('.slider1').slick({
 $('.slider2').slick({
    autoplay: true,
   autoplaySpeed: 2000,
-  dots: true,
-  infinite: false,
+  
+  infinite: true,
   speed: 300,
   slidesToShow: 5,
   slidesToScroll: 5,
@@ -116,7 +116,7 @@ $('.slider2').slick({
 $('.slider3').slick({
    autoplay: true,
   autoplaySpeed: 2000,
-  dots: true,
+ 
   infinite: true,
   speed: 300,
   slidesToShow: 4,

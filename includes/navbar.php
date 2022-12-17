@@ -1,5 +1,14 @@
 <link rel="stylesheet" href="imeges/font-awesome/css/font-awesome.min.css">
+<?php 
 
+
+$conn = mysqli_connect('localhost','root','','parts_platoon');
+if(!$conn){
+  echo mysqli_connect_error();
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,12 +41,15 @@
     </form>
 </div>
 <div class="col-12 col-md-4 mt-5">
-<button class="btn fw-semibold fw-1 position-relative " type="submit" ><i class="fas fa-cart-arrow-down"></i>
+<?php $select_rows= mysqli_query($conn, "SELECT * FROM cart"); 
+              $row_count = mysqli_num_rows($select_rows);
+        ?>
+<a href="cart.php" class="btn fw-semibold fw-1 position-relative " type="submit" ><i class="fas fa-cart-arrow-down"></i>
 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-    99+
+<?php echo $row_count; ?>
     <span class="visually-hidden">unread messages</span>
   </span>
-</button>
+</a>
 
   </div> 
 </div>
