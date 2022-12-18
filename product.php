@@ -44,7 +44,7 @@ if($check_result){
                         <div class="card-body">
                         <span style="color:black;"><?php echo $rows ['name']?></span> 
                         <span style="color:black;">Brand: <?php echo $rows ['brands']?></span> 
-                        <h4 style="color:black;">Tk.<?php echo $rows ['price']?></h4> 
+                        <h4 style="color:black;">৳<?php echo $rows ['price']?></h4> 
                            
                             
                         </div>

@@ -42,7 +42,7 @@ if(!$conn){
               <input name="image" type="hidden" value="<?php echo $rows ['imege']?>" >
 
           </div>
-          <div class="col-md-4 col-12" style="color:white; padding-top:90px;align-items:center;">
+          <div class="col-md-4 col-12" style="color:white; padding-top:50px;align-items:center;">
           <strong><h1>About the product</h1></strong> 
               <strong>
                   <h4 style="color:black;" name="name">Product name:  <?php echo $rows ['name']?></h4>
@@ -51,7 +51,7 @@ if(!$conn){
                   <input name="brands"type="hidden" value="<?php echo $rows ['brands']?>" >
                   <input name="id"type="hidden" value="<?php echo $rows ['id']?>" >
                   <h5></h5>
-                  <span style="color:black;" name="price"> Price:Tk.  <?php echo $rows ['price']?>
+                  <span style="color:black;" name="price"> Price:৳  <?php echo $rows ['price']?>
                   <input name="price" type="hidden" value="<?php echo $rows ['price']?>" >
                   <p style="color:black;" name="cat">Category:  <?php echo $rows ['type']?></p>
                   <input name="cat" type="hidden" value="<?php echo $rows ['type']?>" >

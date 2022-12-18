@@ -63,8 +63,8 @@ global $grand_total;
               <input  style="margin-left:5px;"class="btn btn-light" type="submit" value="Update" name="update"> 
              
           </td>
-          <td>$<?php echo $rows ['price']?></td>
-          <td>$<?php echo $sub_total=($rows ['price']*$rows ['quantity']);
+          <td>৳ <span></span><?php echo $rows ['price']?></td>
+          <td>৳ <?php echo $sub_total=($rows ['price']*$rows ['quantity']);
                ?>
           </td>
           <td>
@@ -85,7 +85,7 @@ global $grand_total;
                  
                     <td colspan="6"><a  href="product.php?brand=All_product"> <button style="width:400px;" class="btn btn-light">Continue Shopping</button> </a></td>
                     <td colspan="">Grand Total</td>
-                    <td>$<?php echo number_format( $grand_total)?></td>
+                    <td>৳ <?php echo number_format( $grand_total)?></td>
                     <form action="config/code_cart.php" method="POST">
                     <td><input onclick ="return confirm('Are you sure you want to remove all item from cart?')" type="submit" name="delete_all" value="DELETE ALL"  class="btn btn-danger " ></td>
                     </form> 
@@ -96,7 +96,7 @@ global $grand_total;
     
       
       <div class="d-grid">
-      <a href="checkout.php?customer_id=<?php echo $user_id ?>"  type="button" class="btn btn-secondary <?= ($grand_total>1)?'':'disabled';?>">Proceed to checkout</a>
+      <a href="checkout.php"  type="button" class="btn btn-secondary <?= ($grand_total>1)?'':'disabled';?>">Proceed to checkout</a>
     </div>
    
     </div>

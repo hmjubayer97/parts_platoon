@@ -113,7 +113,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./orders_read.php" class="nav-link">
+                <a href="orders_read.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>View Orders</p>
                 </a>

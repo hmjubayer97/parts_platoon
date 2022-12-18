@@ -38,7 +38,8 @@ if(!$conn){
     <?php include "includes/navbar.php" ?>
     
 
-    <?php
+   <div class="container">
+   <?php
         if(isset($_SESSION['status'])){
                         ?>
                         <div style="font-weight:bold;color:black;"class="alert alert-success" role="alert"> <?php echo'<h4>'.$_SESSION['status']. '</h4>'?></div>
@@ -46,6 +47,7 @@ if(!$conn){
                         unset($_SESSION['status']);
                       }
                     ?>
+   </div>
 
         <!-- Slider -->
         <div class="slider1">
@@ -262,6 +264,24 @@ else{
               }
               ?>	
    </div>
+   <?php 
+              if(isset($_SESSION['status1'])){
+                ?>
+
+                <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                  <script>
+                      Swal.fire({
+                      position: 'center',
+                      icon: 'success',
+                      title: '<?php echo $_SESSION['status1'] ?>',
+                      showConfirmButton: false,
+                      timer:2500
+                    })
+                 </script>
+                <?php 
+                unset($_SESSION['status1']);
+              }
+            ?>
 </body>
 </html>
 <script src="https://kit.fontawesome.com/a3253ecb96.js" crossorigin="anonymous"></script>
