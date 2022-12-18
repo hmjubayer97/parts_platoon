@@ -70,7 +70,7 @@ if(!$conn){
                     data-description="<?php echo $rows['customer_name'] ?>"
                     
                     data-image="imeges/logo.png"
-                    data-currency="USD"></script>
+                    data-currency="BDT"></script>
                 </td>
 
 
