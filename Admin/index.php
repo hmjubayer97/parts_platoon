@@ -56,17 +56,34 @@ include('includes/db_conn.php');?>
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-              
-                           <h3>53<sup style="font-size: 20px">%</sup></h3>
+              <?php 
+              $sql ="SELECT count(id) from orders where status='On Process'";
+              $data = mysqli_query($conn, $sql);
+              $check_result= mysqli_num_rows($data)> 0;
+                if($check_result){
+                  while( $rows = mysqli_fetch_array( $data ) ) 
+                      {
+                         ?>
+                           <h3><?php echo $rows ['count(id)']?></h3>
                 
 
                 <p>New Orders</p>
+                <?php
+    }
+}
+else{
+   die("Can not execute query");
+}
+?>
+                          
+                
 
+                
               </div>
               <div class="icon">
                 <i class="ion ion-bag"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="orders_read.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -74,9 +91,25 @@ include('includes/db_conn.php');?>
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>53<sup style="font-size: 20px">%</sup></h3>
+              <?php 
+              $sql ="SELECT sum(amount) from payment";
+              $data = mysqli_query($conn, $sql);
+              $check_result= mysqli_num_rows($data)> 0;
+                if($check_result){
+                  while( $rows = mysqli_fetch_array( $data ) ) 
+                      {
+                         ?>
+                           <h3><?php echo $rows ['sum(amount)']?></h3>
+                
 
-                <p>Total Sales</p>
+                <p>Total Sell</p>
+                <?php
+    }
+}
+else{
+   die("Can not execute query");
+}
+?>
               </div>
               <div class="icon">
               <i class="fas fa-dollar-sign"></i>

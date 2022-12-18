@@ -124,6 +124,26 @@
           </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
+              <i class="nav-icon fas fad fa-wallet"></i>
+              <p>
+                Earnings
+                <i class="right fas fa-angle-left"></i>
+                <i class=""></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="earnings_read.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>View Earnings</p>
+                </a>
+              </li>
+
+
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
               
               <i class="nav-icon far fa-user"></i>
               
